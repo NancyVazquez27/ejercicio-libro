@@ -40,7 +40,7 @@ public class Libro
     public String dimeDetalles()
     {
         String detalles;
-        if(numeroDeReferencia!=" ")
+        if(numeroDeReferencia.length()!=0)
         {
             detalles="Titulo:"+titulo+","+"Autor:"+autor+","+"Paginas:"+paginas+","+"Numero de refencia"+numeroDeReferencia;
         }
@@ -56,7 +56,10 @@ public class Libro
     //Metodo de modificacion
     public void cambiaNumRef(String numRef)
     {
-        numeroDeReferencia=numRef;
+        if(numRef.length()>3)
+        {
+            numeroDeReferencia=numRef;
+        }
     }
     
     //Metodo de Acceso

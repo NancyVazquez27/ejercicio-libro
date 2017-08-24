@@ -5,6 +5,7 @@ public class Libro
     private String titulo;
     private String autor;
     private int paginas;
+    private String numeroDeReferencia;
     
 
     //Constructor
@@ -14,6 +15,7 @@ public class Libro
         titulo = tituloLibro;
         autor= autorLibro;
         paginas=paginasLibro;
+        numeroDeReferencia=" ";
     }
     
     // Metodo de Acceso
@@ -38,10 +40,29 @@ public class Libro
     public String dimeDetalles()
     {
         String detalles;
+        if(numeroDeReferencia!=" ")
+        {
+            detalles="Titulo:"+titulo+","+"Autor:"+autor+","+"Paginas:"+paginas+","+"Numero de refencia"+numeroDeReferencia;
+        }
+        else
+            {
+                detalles="Titulo:"+titulo+","+"Autor:"+autor+","+"Paginas:"+paginas+","+"ZZZ";
+            }
         
-        detalles="Titulo:"+titulo+","+"Autor:"+autor+","+"Paginas:"+paginas;
         
         return detalles;
+    }
+    
+    //Metodo de modificacion
+    public void cambiaNumRef(String numRef)
+    {
+        numeroDeReferencia=numRef;
+    }
+    
+    //Metodo de Acceso
+    public String dimeNumRef()
+    {
+        return numeroDeReferencia;
     }
 
 }   
